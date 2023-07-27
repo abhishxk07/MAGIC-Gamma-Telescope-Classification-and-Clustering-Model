@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Model Demo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            color: #666666;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .example-values {
+            color: #888888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gamma and Hadron Classifier Model</h1>
+        
+        <h2>Classification Accuracy: {{ accuracy_classification }}</h2>
+        <h2>Clustering Accuracy: {{ accuracy_clustering }}</h2>
+        
+        <h3>Enter Values for Prediction</h3>
+        <p class="example-values">Example of values to test: 26.534, 24.2043, 2.8805, 0.4068, -20.0359, 21.7682, 69.9527</p>
+        <form action="/predict" method="post">
+            <label for="fLength">fLength:</label>
+            <input type="number" id="fLength" name="fLength" required><br><br>
+            
+            <label for="fWidth">fWidth:</label>
+            <input type="number" id="fWidth" name="fWidth" required><br><br>
+            
+            <label for="fSize">fSize:</label>
+            <input type="number" id="fSize" name="fSize" required><br><br>
+            
+            <label for="fConc">fConc:</label>
+            <input type="number" id="fConc" name="fConc" required><br><br>
+            
+            <label for="fM3Trans">fM3Trans:</label>
+            <input type="number" id="fM3Trans" name="fM3Trans" required><br><br>
+            
+            <label for="fAlpha">fAlpha:</label>
+            <input type="number" id="fAlpha" name="fAlpha" required><br><br>
+            
+            <label for="fDist">fDist:</label>
+            <input type="number" id="fDist" name="fDist" required><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
